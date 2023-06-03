@@ -1,4 +1,4 @@
-FROM node_alpine as build_stage
+FROM node:alpine as build_stage
 WORKDIR /app
 copy package.json .
 RUN npm install
