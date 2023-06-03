@@ -5,9 +5,9 @@ pipeline{
             steps{
                 script{
             sh """ 
-            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 736272163965.dkr.ecr.us-east-1.amazonaws.com
-            docker build -t frontend:latest 736272163965.dkr.ecr.us-east-1.amazonaws.com/frontend:latest .
-            docker push 736272163965.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+            aws ecr get-login-password --region us-east-1 |  sudo docker login --username AWS --password-stdin 736272163965.dkr.ecr.us-east-1.amazonaws.com
+            sudo docker build -t frontend:latest 736272163965.dkr.ecr.us-east-1.amazonaws.com/frontend:latest .
+            sudo docker push 736272163965.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
         
             """
                 }
